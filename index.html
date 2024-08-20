@@ -22,6 +22,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         padding: 10px;
         box-sizing: border-box;
         overflow-x: auto;
+        width: 100%;
     }
 
     table {
@@ -54,11 +55,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
     @media screen and (max-width: 768px) {
         #container {
             overflow-x: auto;
+            padding: 0;
         }
 
         table {
-            width: auto;
+            width: 100%;
             min-width: 600px; /* 최소 너비 설정 */
+            margin: 0 auto; /* 테이블을 중앙에 배치 */
         }
 
         th, td {
