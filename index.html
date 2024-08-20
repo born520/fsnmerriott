@@ -1,186 +1,136 @@
 <!DOCTYPE html>
-<html xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:x="urn:schemas-microsoft-com:office:excel"
-xmlns="http://www.w3.org/TR/REC-html40">
-
+<html lang="ko">
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=utf-8">
-<meta name=ProgId content=Excel.Sheet>
-<meta name=Generator content="Microsoft Excel 15">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-    body {
-        font-family: "맑은 고딕", sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Table</title>
+    <style>
+        body {
+            font-family: "맑은 고딕", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    #container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        overflow-x: auto;
-        width: 100%;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 0 auto;
-        table-layout: fixed;
-    }
-
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: center;
-        font-size: 14px;
-        word-wrap: break-word;
-    }
-
-    th {
-        background-color: #14766A;
-        color: white;
-        padding: 10px;
-    }
-
-    td {
-        background-color: #f9f9f9;
-        padding: 10px;
-    }
-
-    /* 모바일 대응 */
-    @media screen and (max-width: 768px) {
-        table, th, td {
-            font-size: 12px;
-            padding: 6px;
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: auto;
         }
 
         table {
             width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
             table-layout: auto;
+            min-width: 600px; /* 테이블이 너무 좁아지지 않도록 최소 너비 설정 */
         }
 
         th, td {
-            display: block;
-            width: 100%;
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+            word-wrap: break-word;
         }
 
-        th, td {
-            text-align: left;
-            padding-left: 50%;
-            position: relative;
+        th {
+            background-color: #14766A;
+            color: white;
         }
 
-        th:before, td:before {
-            position: absolute;
-            left: 0;
-            width: 45%;
-            white-space: nowrap;
+        td {
+            background-color: #f9f9f9;
         }
 
-        th:before {
-            content: attr(data-label);
-            font-weight: bold;
-            text-align: left;
-        }
+        /* 모바일 대응 */
+        @media screen and (max-width: 768px) {
+            table {
+                font-size: 12px;
+                padding: 6px;
+            }
 
-        td:before {
-            content: attr(data-label);
-            font-weight: normal;
+            th, td {
+                font-size: 12px;
+                padding: 6px;
+            }
         }
-
-        tr {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-    }
-</style>
+    </style>
 </head>
 
 <body>
 <div id="container">
-<table>
-    <thead>
+    <table>
         <tr>
-            <th colspan="8" data-label="Title">다낭 메리어트 리조트앤스파</th>
+            <th colspan="6">다낭 메리어트 리조트앤스파 논누억 비치빌라</th>
         </tr>
         <tr>
-            <th colspan="2" data-label="Season">Season</th>
-            <th data-label="Cost Type">Cost Type</th>
-            <th data-label="디럭스가든뷰">디럭스가든뷰</th>
-            <th data-label="디럭스오션뷰">디럭스오션뷰</th>
-            <th data-label="2베드룸">2베드룸</th>
-            <th data-label="3베드룸">3베드룸</th>
-            <th data-label="4베드룸오션">4베드룸오션</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td colspan="2" data-label="Season">24. 09/01 ~ 24. 12/22<br>24. 12/26 ~ 24. 12/29</td>
-            <td data-label="Cost Type">BB</td>
-            <td data-label="디럭스가든뷰">$140</td>
-            <td data-label="디럭스오션뷰">$170</td>
-            <td data-label="2베드룸">$295</td>
-            <td data-label="3베드룸">$445</td>
-            <td data-label="4베드룸오션">$690</td>
+            <th colspan="2">Season</th>
+            <th>Cost Type</th>
+            <th>2베드룸</th>
+            <th>3베드룸</th>
+            <th>4베드룸</th>
         </tr>
         <tr>
-            <td colspan="2" data-label="Season">24. 12/23 ~ 24. 12/25<br>24. 12/30 ~ 24. 12/31</td>
-            <td data-label="Cost Type">BB</td>
-            <td data-label="디럭스가든뷰">$190</td>
-            <td data-label="디럭스오션뷰">$220</td>
-            <td data-label="2베드룸">$400</td>
-            <td data-label="3베드룸">$585</td>
-            <td data-label="4베드룸오션">$880</td>
+            <td colspan="2">24. 08/16 ~ 24. 12/22<br>24. 12/26 ~ 24. 12/29</td>
+            <td>BB</td>
+            <td>$295</td>
+            <td>$410</td>
+            <td>$510</td>
         </tr>
         <tr>
-            <th rowspan="3" data-label="객실규정">객실규정</th>
-            <th colspan="2" data-label="기준인원">기준인원</th>
-            <td colspan="2" data-label="디럭스가든뷰">2명</td>
-            <td data-label="2베드룸">4명</td>
-            <td data-label="3베드룸">6명</td>
-            <td data-label="4베드룸오션">8명</td>
+            <td colspan="2">24. 12/23 ~ 24. 12/25<br>24. 12/30 ~ 24. 12/31</td>
+            <td>BB</td>
+            <td>$330</td>
+            <td>$460</td>
+            <td>$535</td>
         </tr>
         <tr>
-            <th colspan="2" data-label="최대투숙인원">최대투숙인원</th>
-            <td colspan="2" data-label="디럭스가든뷰">성인3 or 성인2+아동2</td>
-            <td data-label="2베드룸">성인4+아동2<br>성인5+아동1</td>
-            <td data-label="3베드룸">성인6+아동4<br>성인7+아동3</td>
-            <td data-label="4베드룸오션">성인8+아동5<br>성인9+아동4</td>
+            <th rowspan="3">객실규정</th>
+            <th colspan="2">기준인원</th>
+            <td>4명</td>
+            <td>6명</td>
+            <td>8명</td>
         </tr>
         <tr>
-            <th colspan="2" data-label="무료인원">무료인원</th>
-            <td colspan="2" data-label="디럭스가든뷰">아동1명까지 무료</td>
-            <td data-label="2베드룸">아동 2명까지 무료</td>
-            <td data-label="3베드룸">아동 3명까지 무료</td>
-            <td data-label="4베드룸오션">아동 4명까지 무료</td>
+            <th colspan="2">최대투숙인원</th>
+            <td>성인4+아동2<br>or 성인5+아동1</td>
+            <td>성인6+아동3<br>or 성인7+아동2</td>
+            <td>성인8+아동4<br>or 성인9+아동3</td>
         </tr>
         <tr>
-            <td colspan="8" data-label="비고">* BB : 조식 포함</td>
+            <th colspan="2">무료인원</th>
+            <td>아동2</td>
+            <td>아동3</td>
+            <td>아동4</td>
         </tr>
         <tr>
-            <th colspan="2" rowspan="2" data-label="추가인원">추가인원</th>
-            <td rowspan="2" data-label="Cost Type">BB</td>
-            <td colspan="2" data-label="성인 (Ext Bed)">성인 (Ext Bed)</td>
-            <td colspan="3" data-label="아동 (Ext Bed)">아동 (Ext Bed)</td>
+            <td colspan="6">&nbsp;</td>
         </tr>
         <tr>
-            <td data-label="성인 (Ext Bed)">$60</td>
-            <td data-label="성인 (Ext Bed)">$60</td>
-            <td colspan="3" rowspan="2" data-label="비고">* 마블팩 필수구매조건 (1인당) : 성인$60 / 아동 $30<br> * 마블팩 1회 : 중식 or 석식 1회, 1일(10시~20시) 풀사이드바 스낵&음료(주류포함)무료, 마사지1시간</td>
+            <th colspan="2">추가인원<br>（성인/아동）</th>
+            <td>2024</td>
+            <td>성인</td>
+            <td>아동</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
-            <th colspan="2" data-label="마블팩">마블팩</th>
-            <td data-label="마블팩">마블</td>
-            <td data-label="성인 (Ext Bed)">$60</td>
-            <td data-label="아동 (Ext Bed)">$30</td>
+            <td colspan="2">BB</td>
+            <td>$60</td>
+            <td>무료</td>
+            <td colspan="2">&nbsp;</td>
         </tr>
-    </tbody>
-</table>
+        <tr>
+            <td colspan="6">* BB : 조식 포함</td>
+        </tr>
+        <tr>
+            <td colspan="6">&nbsp;</td>
+        </tr>
+    </table>
 </div>
 </body>
 
