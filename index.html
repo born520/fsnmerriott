@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            overflow-x: hidden; /* 페이지 전체가 잘리지 않도록 설정 */
         }
 
         #container {
@@ -19,15 +20,15 @@
             padding: 10px;
             width: 100%;
             overflow-x: auto;
-            overflow-y: auto;
         }
 
         table {
-            width: 100%;
             border-collapse: collapse;
-            margin: 0 auto;
-            table-layout: auto;
-            min-width: 600px; /* 테이블이 너무 좁아지지 않도록 최소 너비 설정 */
+            margin: 0;
+            padding: 0;
+            table-layout: fixed;
+            width: 100%;
+            min-width: 1000px; /* 최소 너비를 설정하여 작은 화면에서 잘리지 않도록 설정 */
         }
 
         th, td {
@@ -49,11 +50,6 @@
 
         /* 모바일 대응 */
         @media screen and (max-width: 768px) {
-            table {
-                font-size: 12px;
-                padding: 6px;
-            }
-
             th, td {
                 font-size: 12px;
                 padding: 6px;
