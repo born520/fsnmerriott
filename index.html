@@ -30,7 +30,10 @@
         padding: 8px;
         text-align: center;
         border: 1px solid #ddd;
-        white-space: nowrap;
+        white-space: normal; /* 자동 줄바꿈 허용 */
+        word-wrap: break-word; /* 단어가 셀 밖으로 넘치지 않도록 함 */
+        word-break: break-all; /* 긴 단어를 잘라서 줄바꿈 */
+        overflow: hidden; /* 텍스트가 넘치지 않도록 숨김 처리 */
     }
 
     .responsive-table th {
