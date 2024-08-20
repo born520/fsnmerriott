@@ -13,13 +13,17 @@
         padding: 0;
     }
 
-    .responsive-table {
+    .responsive-table-container {
         width: 100%;
-        max-width: 100%;
         overflow-x: auto;
         margin: 0 auto;
+    }
+
+    .responsive-table {
+        width: 100%;
         border-collapse: collapse;
         table-layout: fixed;
+        min-width: 900px; /* 최소 넓이를 지정하여 너무 좁아지지 않도록 설정 */
     }
 
     .responsive-table th, .responsive-table td {
@@ -80,19 +84,48 @@
             <td colspan="2">$445</td>
             <td colspan="2">$690</td>
         </tr>
-        <!-- Additional rows as needed -->
+        <tr>
+            <td colspan="2">24. 12/23 ~ 24. 12/25<br>24. 12/30 ~ 24. 12/31</td>
+            <td>BB</td>
+            <td>$190</td>
+            <td>$220</td>
+            <td>$400</td>
+            <td colspan="2">$585</td>
+            <td colspan="2">$880</td>
+        </tr>
+        <tr>
+            <td rowspan="3">객실규정</td>
+            <td colspan="2">기준인원</td>
+            <td colspan="2">2명</td>
+            <td>4명</td>
+            <td colspan="2">6명</td>
+            <td colspan="2">8명</td>
+        </tr>
+        <tr>
+            <td colspan="2">최대투숙인원</td>
+            <td colspan="2">성인3 or 성인2+아동2</td>
+            <td>성인4+아동2<br>성인5+아동1</td>
+            <td colspan="2">성인6+아동4<br>성인7+아동3</td>
+            <td colspan="2">성인8+아동5<br>성인9+아동4</td>
+        </tr>
+        <tr>
+            <td colspan="2">무료인원</td>
+            <td colspan="2">아동1명까지 무료</td>
+            <td>아동 2명까지 무료</td>
+            <td colspan="2">아동 3명까지 무료</td>
+            <td colspan="2">아동 4명까지 무료</td>
+        </tr>
         <tr>
             <td colspan="10">* BB : 조식 포함</td>
         </tr>
         <tr>
-            <td colspan="2">추가인원</td>
+            <td rowspan="2" colspan="2">추가인원</td>
             <td>BB</td>
             <td>성인 (Ext Bed)</td>
             <td>아동 (Ext Bed)</td>
-            <td colspan="5">* 마블팩 필수구매조건 (1인당) : 성인$60 / 아동 $30<br>* 마블팩 1회 : 중식 or 석식 1회, 1일(10시~20시) 풀사이드바 스낵&amp;음료(주류포함)무료, 마사지1시간</td>
+            <td colspan="5" rowspan="3">* 마블팩 필수구매조건 (1인당) : 성인$60 / 아동 $30<br>* 마블팩 1회 : 중식 or 석식 1회, 1일(10시~20시) 풀사이드바 스낵&amp;음료(주류포함)무료, 마사지1시간</td>
         </tr>
         <tr>
-            <td colspan="2">마블팩</td>
             <td>마블</td>
             <td>$60</td>
             <td>$30</td>
