@@ -21,17 +21,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
         align-items: center;
         padding: 10px;
         box-sizing: border-box;
-        overflow-x: auto;
-        width: 100%;
     }
 
     table {
         width: 100%;
-        max-width: 100%;
         border-collapse: collapse;
         margin: 0;
         padding: 0;
-        table-layout: auto;
+        table-layout: fixed;
     }
 
     th, td {
@@ -51,22 +48,48 @@ xmlns="http://www.w3.org/TR/REC-html40">
         background-color: #f9f9f9;
     }
 
-    /* 모바일에서 테이블이 스크롤되도록 */
+    /* 반응형 디자인 */
     @media screen and (max-width: 768px) {
-        #container {
-            overflow-x: auto;
-            padding: 0;
+        table, thead, tbody, th, td, tr {
+            display: block;
         }
 
-        table {
-            width: 100%;
-            min-width: 600px; /* 최소 너비 설정 */
-            margin: 0 auto; /* 테이블을 중앙에 배치 */
+        tr {
+            margin-bottom: 15px;
         }
 
-        th, td {
-            font-size: 12px;
-            padding: 6px;
+        th {
+            text-align: left;
+        }
+
+        td {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+
+        td:before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            width: 45%;
+            padding-left: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        th {
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        td {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        tr td:first-child {
+            border-top: 1px solid black;
         }
     }
 </style>
@@ -75,78 +98,82 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <body>
 <div id="container">
 <table>
- <tr>
-  <th colspan="8">다낭 메리어트 리조트앤스파</th>
- </tr>
- <tr>
-  <th colspan="2">Season</th>
-  <th>Cost Type</th>
-  <th>디럭스가든뷰</th>
-  <th>디럭스오션뷰</th>
-  <th>2베드룸</th>
-  <th>3베드룸</th>
-  <th>4베드룸오션</th>
- </tr>
- <tr>
-  <td colspan="2">24. 09/01 ~ 24. 12/22<br>24. 12/26 ~ 24. 12/29</td>
-  <td>BB</td>
-  <td>$140</td>
-  <td>$170</td>
-  <td>$295</td>
-  <td>$445</td>
-  <td>$690</td>
- </tr>
- <tr>
-  <td colspan="2">24. 12/23 ~ 24. 12/25<br>24. 12/30 ~ 24. 12/31</td>
-  <td>BB</td>
-  <td>$190</td>
-  <td>$220</td>
-  <td>$400</td>
-  <td>$585</td>
-  <td>$880</td>
- </tr>
- <tr>
-  <th rowspan="3">객실규정</th>
-  <th colspan="2">기준인원</th>
-  <td colspan="2">2명</td>
-  <td>4명</td>
-  <td>6명</td>
-  <td>8명</td>
- </tr>
- <tr>
-  <th colspan="2">최대투숙인원</th>
-  <td colspan="2">성인3 or 성인2+아동2</td>
-  <td>성인4+아동2<br>성인5+아동1</td>
-  <td>성인6+아동4<br>성인7+아동3</td>
-  <td>성인8+아동5<br>성인9+아동4</td>
- </tr>
- <tr>
-  <th colspan="2">무료인원</th>
-  <td colspan="2">아동1명까지 무료</td>
-  <td>아동 2명까지 무료</td>
-  <td>아동 3명까지 무료</td>
-  <td>아동 4명까지 무료</td>
- </tr>
- <tr>
-  <td colspan="8">* BB : 조식 포함</td>
- </tr>
- <tr>
-  <th colspan="2" rowspan="2">추가인원</th>
-  <td rowspan="2">BB</td>
-  <td colspan="2">성인 (Ext Bed)</td>
-  <td colspan="3">아동 (Ext Bed)</td>
- </tr>
- <tr>
-  <td>$60</td>
-  <td>$60</td>
-  <td colspan="3" rowspan="2">* 마블팩 필수구매조건 (1인당) : 성인$60 / 아동 $30<br> * 마블팩 1회 : 중식 or 석식 1회, 1일(10시~20시) 풀사이드바 스낵&음료(주류포함)무료, 마사지1시간</td>
- </tr>
- <tr>
-  <th colspan="2">마블팩</th>
-  <td>마블</td>
-  <td>$60</td>
-  <td>$30</td>
- </tr>
+    <thead>
+        <tr>
+            <th colspan="8">다낭 메리어트 리조트앤스파</th>
+        </tr>
+        <tr>
+            <th colspan="2">Season</th>
+            <th>Cost Type</th>
+            <th>디럭스가든뷰</th>
+            <th>디럭스오션뷰</th>
+            <th>2베드룸</th>
+            <th>3베드룸</th>
+            <th>4베드룸오션</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2" data-label="Season">24. 09/01 ~ 24. 12/22<br>24. 12/26 ~ 24. 12/29</td>
+            <td data-label="Cost Type">BB</td>
+            <td data-label="디럭스가든뷰">$140</td>
+            <td data-label="디럭스오션뷰">$170</td>
+            <td data-label="2베드룸">$295</td>
+            <td data-label="3베드룸">$445</td>
+            <td data-label="4베드룸오션">$690</td>
+        </tr>
+        <tr>
+            <td colspan="2" data-label="Season">24. 12/23 ~ 24. 12/25<br>24. 12/30 ~ 24. 12/31</td>
+            <td data-label="Cost Type">BB</td>
+            <td data-label="디럭스가든뷰">$190</td>
+            <td data-label="디럭스오션뷰">$220</td>
+            <td data-label="2베드룸">$400</td>
+            <td data-label="3베드룸">$585</td>
+            <td data-label="4베드룸오션">$880</td>
+        </tr>
+        <tr>
+            <th rowspan="3" data-label="객실규정">객실규정</th>
+            <th colspan="2" data-label="기준인원">기준인원</th>
+            <td colspan="2" data-label="디럭스가든뷰">2명</td>
+            <td data-label="2베드룸">4명</td>
+            <td data-label="3베드룸">6명</td>
+            <td data-label="4베드룸오션">8명</td>
+        </tr>
+        <tr>
+            <th colspan="2" data-label="최대투숙인원">최대투숙인원</th>
+            <td colspan="2" data-label="디럭스가든뷰">성인3 or 성인2+아동2</td>
+            <td data-label="2베드룸">성인4+아동2<br>성인5+아동1</td>
+            <td data-label="3베드룸">성인6+아동4<br>성인7+아동3</td>
+            <td data-label="4베드룸오션">성인8+아동5<br>성인9+아동4</td>
+        </tr>
+        <tr>
+            <th colspan="2" data-label="무료인원">무료인원</th>
+            <td colspan="2" data-label="디럭스가든뷰">아동1명까지 무료</td>
+            <td data-label="2베드룸">아동 2명까지 무료</td>
+            <td data-label="3베드룸">아동 3명까지 무료</td>
+            <td data-label="4베드룸오션">아동 4명까지 무료</td>
+        </tr>
+        <tr>
+            <td colspan="8" data-label="비고">* BB : 조식 포함</td>
+        </tr>
+        <tr>
+            <th colspan="2" rowspan="2" data-label="추가인원">추가인원</th>
+            <td rowspan="2" data-label="Cost Type">BB</td>
+            <td colspan="2" data-label="성인 (Ext Bed)">성인 (Ext Bed)</td>
+            <td colspan="3" data-label="아동 (Ext Bed)">아동 (Ext Bed)</td>
+        </tr>
+        <tr>
+            <td data-label="성인 (Ext Bed)">$60</td>
+            <td data-label="성인 (Ext Bed)">$60</td>
+            <td colspan="3" rowspan="2" data-label="비고">* 마블팩 필수구매조건 (1인당) : 성인$60 / 아동 $30<br> * 마블팩 1회 : 중식 or 석식 1회, 1일(10시~20시) 풀사이드바 스낵&음료(주류포함)무료, 마사지1시간</td>
+        </tr>
+        <tr>
+            <th colspan="2" data-label="마블팩">마블팩</th>
+            <td data-label="마블팩">마블</td>
+            <td data-label="성인 (Ext Bed)">$60</td>
+            <td data-label="아동 (Ext Bed)">$30</td>
+        </tr>
+    </tbody>
 </table>
 </div>
 </body>
