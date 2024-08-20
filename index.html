@@ -10,9 +10,10 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body {
-        font-family: "맑은 고딕", monospace;
+        font-family: "맑은 고딕", sans-serif;
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 
     #container {
@@ -20,14 +21,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
         justify-content: center;
         align-items: center;
         padding: 10px;
-        box-sizing: border-box;
+        overflow-x: auto;
+        width: 100%;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        margin: 0;
-        padding: 0;
+        margin: 0 auto;
         table-layout: fixed;
     }
 
@@ -42,54 +43,59 @@ xmlns="http://www.w3.org/TR/REC-html40">
     th {
         background-color: #14766A;
         color: white;
+        padding: 10px;
     }
 
     td {
         background-color: #f9f9f9;
+        padding: 10px;
     }
 
-    /* 반응형 디자인 */
+    /* 모바일 대응 */
     @media screen and (max-width: 768px) {
-        table, thead, tbody, th, td, tr {
+        table, th, td {
+            font-size: 12px;
+            padding: 6px;
+        }
+
+        table {
+            width: 100%;
+            table-layout: auto;
+        }
+
+        th, td {
             display: block;
+            width: 100%;
         }
 
-        tr {
-            margin-bottom: 15px;
-        }
-
-        th {
+        th, td {
             text-align: left;
-        }
-
-        td {
-            text-align: right;
             padding-left: 50%;
             position: relative;
         }
 
-        td:before {
-            content: attr(data-label);
+        th:before, td:before {
             position: absolute;
             left: 0;
             width: 45%;
-            padding-left: 10px;
+            white-space: nowrap;
+        }
+
+        th:before {
+            content: attr(data-label);
             font-weight: bold;
             text-align: left;
         }
 
-        th {
-            font-size: 16px;
-            padding: 10px;
+        td:before {
+            content: attr(data-label);
+            font-weight: normal;
         }
 
-        td {
-            font-size: 14px;
-            padding: 10px;
-        }
-
-        tr td:first-child {
-            border-top: 1px solid black;
+        tr {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
         }
     }
 </style>
@@ -100,16 +106,16 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <table>
     <thead>
         <tr>
-            <th colspan="8">다낭 메리어트 리조트앤스파</th>
+            <th colspan="8" data-label="Title">다낭 메리어트 리조트앤스파</th>
         </tr>
         <tr>
-            <th colspan="2">Season</th>
-            <th>Cost Type</th>
-            <th>디럭스가든뷰</th>
-            <th>디럭스오션뷰</th>
-            <th>2베드룸</th>
-            <th>3베드룸</th>
-            <th>4베드룸오션</th>
+            <th colspan="2" data-label="Season">Season</th>
+            <th data-label="Cost Type">Cost Type</th>
+            <th data-label="디럭스가든뷰">디럭스가든뷰</th>
+            <th data-label="디럭스오션뷰">디럭스오션뷰</th>
+            <th data-label="2베드룸">2베드룸</th>
+            <th data-label="3베드룸">3베드룸</th>
+            <th data-label="4베드룸오션">4베드룸오션</th>
         </tr>
     </thead>
     <tbody>
